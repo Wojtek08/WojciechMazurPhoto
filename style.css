@@ -213,7 +213,7 @@ main {
 
 
 .subject {
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     color: var(--main-font-color);
     text-align: center;
     margin-top: 20px;
@@ -221,7 +221,7 @@ main {
 }
 
 .subject-date {
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-weight: 400;
     color: var(--main-font-color);
     text-align: center;
@@ -235,7 +235,7 @@ main {
 }
 
 .subpages-gallery img {
-    width: 80%;
+    width: 90%;
     margin: 20px auto;
     max-width: 1300px;
     position: relative;
@@ -266,6 +266,45 @@ main {
     left: 15%;
 }
 
+footer {
+    border-top: 1px solid white;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer h1 {
+    color: var(--main-font-color);
+    font-family: var(--main-font-family);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+footer section ul a {
+    text-decoration: none;
+}
+
+footer section ul a li {
+    list-style-type: none;
+    color: var(--main-font-color);
+    margin-top: 20px;
+}
+
+footer section ul a li::after {
+    content: "";
+    display: block;
+    transform: scale(0);
+    border-bottom: 1px solid white;
+    transition: 0.3s ease transform;
+}
+
+footer section ul a li:hover::after {
+    transform: scale(1);
+}
+
 @media only screen and (min-width: 622px) {
     .burger {
         top: 28px
@@ -283,7 +322,11 @@ main {
     }
 
     .subject {
-        font-size: 2.5rem
+        font-size: 2rem
+    }
+
+    .subject-date {
+        font-size: 0.9rem;
     }
 
     .images-container {
