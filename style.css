@@ -25,6 +25,7 @@
 
 body {
     background-color: var(--main-background-color);
+    margin: 0px;
 }
 
 html {
@@ -48,13 +49,13 @@ header h1 {
     user-select: none;
 }
 
-header section {
+.burger {
     position: absolute;
     right: 25px;
-    top: 20px;
+    top: 30px;
 }
 
-header section img {
+.burger img {
     width: 30px;
     cursor: pointer;
     user-select: none;
@@ -77,12 +78,8 @@ header section img {
     font-size: 30px;
 }
 
-.two-options section i:nth-of-type(2) {
-    font-size: 20px;
-}
-
 .two-options section i:last-of-type {
-    font-size: 15px
+    font-size: 18px;
 }
 
 .two-options select {
@@ -158,16 +155,20 @@ header h1 section {
     transform: scale(1);
 }
 
+main {
+    padding-bottom: 30px;
+}
+
 .main-site-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    overflow: hidden;
     height: auto;
     max-width: 2000px;
     margin: 0px auto;
 }
 
 .main-site-gallery div {
-    /* width: 100%; */
     height: 400px;
     display: flex;
     justify-content: center;
@@ -209,6 +210,92 @@ header h1 section {
     font-family: var(--main-font-family);
 }
 
+
+
+.subject {
+    font-size: 1.7rem;
+    color: var(--main-font-color);
+    text-align: center;
+    margin-top: 20px;
+    font-family: var(--header-font-family);
+}
+
+.subject-date {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--main-font-color);
+    text-align: center;
+    font-family: var(--main-font-family);
+}
+
+.subpages-gallery {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.subpages-gallery img {
+    width: 80%;
+    margin: 20px auto;
+    max-width: 1300px;
+    position: relative;
+    z-index: 10;
+}
+
+.images-container {
+    width: 80%;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 1300px;
+}
+
+.images-container img {
+    width: 100%;
+    margin: 0px auto;
+}
+
+.warning {
+    color: var(--main-font-color);
+    font-size: 0.5rem;
+    font-family: var(--main-font-family);
+    position: absolute;
+    z-index: 0;
+    top: 13%;
+    left: 15%;
+}
+
+@media only screen and (min-width: 622px) {
+    .burger {
+        top: 28px
+    }
+
+    .warning {
+        left: 20%;
+        font-size: 1rem
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .burger img {
+        width: 40px
+    }
+
+    .subject {
+        font-size: 2.5rem
+    }
+
+    .images-container {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .warning {
+        font-size: 1.5rem;
+        top: 20%;
+    }
+}
+
 @media only screen and (min-width: 1200px) {
     header {
         display: flex;
@@ -220,14 +307,9 @@ header h1 section {
     }
 
     header h1 {
-        /* width: fit-content; */
         padding: 0px;
         justify-content: space-between;
         flex-direction: row;
-    }
-
-    header h1 span {
-        order: 2;
     }
 
     .two-options select {
@@ -236,15 +318,19 @@ header h1 section {
         left: 0px;
         top: 10px;
     }
-
-    header section img {
-        display: none;
+    
+    .two-options {
+        padding: 0px;
     }
 
     .two-options section {
         position: absolute;
         right: 15px;
         top: 20px;
+    }
+
+    .burger img {
+        display: none;
     }
 
     #nav-ul {
@@ -262,9 +348,13 @@ header h1 section {
     #nav-ul ul a:last-of-type li {
         padding: 0px 5px;
     }
+    
+    .images-container {
+        grid-template-columns: repeat(4,1fr);
+    }
 
-    .two-options {
-        padding: 0px;
+    .warning {
+        font-size: 2rem;
     }
 }
 
@@ -286,6 +376,6 @@ header h1 section {
 
 @media only screen and (min-width: 1700px) {
     .main-site-gallery div {
-        height: 450px;
+        height: 500px;
     }
 }
