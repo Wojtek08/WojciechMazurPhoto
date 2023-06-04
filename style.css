@@ -161,7 +161,7 @@ main {
 
 .main-site-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
     overflow: hidden;
     height: auto;
     max-width: 2000px;
@@ -179,7 +179,7 @@ main {
 
 .main-site-gallery div img {
     width: 100%;
-    transform: scale(1.1);
+    transform: scale(1.17);
     transition: 0.2s ease;
     transition-property: transform, opacity;
 }
