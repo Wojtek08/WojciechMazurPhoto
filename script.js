@@ -18,6 +18,6 @@ first.addEventListener('click', fontSize = function () {
 });
 
 let second = document.getElementById("2nd");
-second.onclick = function () {
+second.addEventListener('click', fontSizeSmaller = function () {
     html.style.fontSize = "20px";
-}
+});
