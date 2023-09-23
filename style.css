@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*:not(body) {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    animation-name: transition;
+    animation-duration: 0.75s;
+    animation-timing-function: ease;
+}
+
+@keyframes transition {
+    from {opacity: 0}
+    to {opacitiy: 1}
+}
+
+:root {
+    --main-font-color: #ffffff;
+    --main-font-family: Ubuntu, Rubik, Outfit, Montserrat, sans-serif;
+    --header-font-family: Montserrat, Rubik, Outfit, sans-serif;
+    --main-background-color: #000000;
+    --header-font-color: #9c1f1f;
+    --header-font-color-hover: #f02f2f;
+}
+
+body {
+    background-color: var(--main-background-color);
+    margin: 0px;
+}
+
+html {
+    font-size: 20px;
+}
+
+header {
+    padding: 10px 10px 0px;
+    background-color: var(--main-background-color);
+    color: var(--header-font-color);
+    font-size: 1rem;
+    font-family: var(--header-font-family);
+    position: relative;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: var(--main-font-color);
+    text-align: center;
+    padding: 10px 50px;
+    user-select: none;
+}
+
+.burger {
+    position: absolute;
+    right: 25px;
+    top: 30px;
+}
+
+.burger img {
+    width: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.two-options {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.two-options section i {
+    cursor: pointer;
+    user-select: none;
+    padding: 2px;
+}
+
+.two-options section i:first-of-type {
+    font-size: 30px;
+}
+
+.two-options section i:last-of-type {
+    font-size: 18px;
+}
+
+.two-options select {
+    background-color: var(--main-background-color);
+    border: 2px solid rgba(255, 255, 255, 0.384);
+    padding: 8px 5px;
+    color: var(--main-font-color);
+    border-radius: 10px;
+    font-size: 0.7rem;
+    margin: 10px 3px;
+    font-family: var(--header-font-family);
+    user-select: none;
+}
+
+.two-options select:hover {
+    cursor: pointer;
+}
+
+header h1 section {
+    position: static;
+}
+
+#nav-ul {
+    position: sticky;
+    top: 0;
+    margin: 0px auto;
+    height: 0px;
+    overflow: hidden;
+    transition: 0.25s ease;
+    transition-property: height
+}
+
+#nav-ul.open {
+    height: 199px;
+}
+
+#nav-ul ul {
+    width: fit-content;
+    margin: 0px auto;
+}
+
+#nav-ul ul a {
+    text-decoration: none;
+    color: var(--header-font-color)
+}
+
+#nav-ul ul a li {
+    padding: 5px 10px;
+    width: fit-content;
+    list-style-type: none;
+}
+
+#nav-ul ul a:last-of-type li {
+    padding-bottom: 10px;
+}
+
+#nav-ul ul a li:hover {
+    color: var(--header-font-color-hover);
+    cursor: pointer;
+}
+
+#nav-ul ul a li::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid white;
+    transform: scaleX(0);
+    transform-origin: 0% 0%;
+    margin-top: 1px;
+    transition: 0.3s ease transform;
+}
+
+#nav-ul ul a li:hover::after {
+    transform: scale(1);
+}
+
+main {
+    padding-bottom: 30px;
+}
+
+.main-site-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+    overflow: hidden;
+    height: auto;
+    max-width: 2000px;
+    margin: 0px auto;
+}
+
+.main-site-gallery div {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.main-site-gallery div img {
+    width: 100%;
+    transform: scale(1.17);
+    transition: 0.2s ease;
+    transition-property: transform, opacity;
+}
+
+.main-site-gallery div:hover img {
+    transform: scale(1.25);
+    opacity: 0.65;
+}
+
+.main-site-gallery div h2 {
+    position: absolute;
+    bottom: 13px;
+    z-index: 15;
+    color: var(--main-font-color);
+    font-family: var(--main-font-family);
+    font-size: 1.05rem;
+    line-height: 1rem;
+}
+
+.main-site-gallery div h3 {
+    position: absolute;
+    bottom: 36px;
+    font-size: 0.6rem;
+    transform: scaleY(1.03);
+    font-weight: 400;
+    z-index: 15;
+    color: var(--main-font-color);
+    font-family: var(--main-font-family);
+}
+
+
+
+.subject {
+    font-size: 1.2rem;
+    color: var(--main-font-color);
+    text-align: center;
+    margin-top: 20px;
+    font-family: var(--header-font-family);
+}
+
+.subject-date {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--main-font-color);
+    text-align: center;
+    font-family: var(--main-font-family);
+}
+
+.subpages-gallery {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.subpages-gallery img {
+    width: 90%;
+    margin: 20px auto;
+    max-width: 1300px;
+    position: relative;
+    z-index: 10;
+}
+
+.images-container {
+    width: 80%;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 1300px;
+}
+
+.images-container img {
+    width: 100%;
+    margin: 0px auto;
+}
+
+.warning {
+    color: var(--main-font-color);
+    font-size: 0.5rem;
+    font-family: var(--main-font-family);
+    position: absolute;
+    z-index: 0;
+    top: 13%;
+    left: 15%;
+}
+
+footer {
+    border-top: 1px solid white;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer h1 {
+    color: var(--main-font-color);
+    font-family: var(--main-font-family);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+footer section ul a {
+    text-decoration: none;
+}
+
+footer section ul a li {
+    list-style-type: none;
+    color: var(--main-font-color);
+    margin-top: 20px;
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+footer section ul a li::after {
+    content: "";
+    display: block;
+    transform: scale(0);
+    border-bottom: 1px solid white;
+    transition: 0.3s ease transform;
+}
+
+footer section ul a li:hover::after {
+    transform: scale(1);
+}
+
+@media only screen and (min-width: 622px) {
+    .burger {
+        top: 28px
+    }
+
+    .warning {
+        left: 20%;
+        font-size: 1rem
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .burger img {
+        width: 40px
+    }
+
+    .subject {
+        font-size: 2rem
+    }
+
+    .subject-date {
+        font-size: 0.9rem;
+    }
+
+    .images-container {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .warning {
+        font-size: 1.5rem;
+        top: 20%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    header {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 20px;
+        max-width: 2000px;
+        margin: 0px auto;
+    }
+
+    header h1 {
+        padding: 0px;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .two-options select {
+        order: 1;
+        position: absolute;
+        left: 0px;
+        top: 10px;
+    }
+    
+    .two-options {
+        padding: 0px;
+    }
+
+    .two-options section {
+        position: absolute;
+        right: 15px;
+        top: 20px;
+    }
+
+    .burger img {
+        display: none;
+    }
+
+    #nav-ul {
+        height: fit-content;
+        width: fit-content;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #nav-ul ul a li {
+        display: inline-block;
+        padding: 0px 5px;
+    }
+
+    #nav-ul ul a:last-of-type li {
+        padding: 0px 5px;
+    }
+    
+    .images-container {
+        grid-template-columns: repeat(4,1fr);
+    }
+
+    .warning {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1290px) {
+    .two-options select {
+        left: 30px;
+    }
+
+    .two-options section {
+        right: 30px;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .main-site-gallery {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media only screen and (min-width: 1700px) {
+    .main-site-gallery div {
+        height: 500px;
+    }
+}
